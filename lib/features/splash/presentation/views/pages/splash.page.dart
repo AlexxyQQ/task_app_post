@@ -20,7 +20,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 1));
-    sl<NavigationService>().push(const PostWrapper());
+    sl<NavigationService>().replace(const PostWrapper());
   }
 
   @override

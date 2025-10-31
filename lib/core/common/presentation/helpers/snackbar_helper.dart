@@ -27,6 +27,7 @@ class SnackbarHelper {
         Center(
           child: AppText(
             message,
+            maxLines: 6,
             style:
                 textStyle ??
                 AllTextStyle.f14W4.copyWith(color: PrimitiveColors.white),

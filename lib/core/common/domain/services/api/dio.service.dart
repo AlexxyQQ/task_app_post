@@ -14,6 +14,7 @@ class DioService {
       ..options.baseUrl = ApiConstants.baseAPIURL
       ..options.receiveTimeout = ApiConstants.receiveTimeout
       ..options.connectTimeout = ApiConstants.connectTimeout
+      ..options.headers = ApiConstants.defaultHeader
       // Adding a custom error interceptor for enhanced error handling.
       ..interceptors.add(DioErrorInterceptor())
       ..interceptors.add(const ConnectivityInterceptor());
@@ -141,7 +142,7 @@ class DioService {
 /// ```
 class ApiHandler {
   static Future<Either<AppErrorModel, T>> _call<T>(
-    Future<Response<Map<String, dynamic>>> Function() apiCall, {
+    Future<Response<dynamic>> Function() apiCall, {
     required T Function(Map<String, dynamic>) onSuccess,
     AppErrorModel Function(Map<String, dynamic>)? onError,
     AppErrorModel defaultErrorMessage = const AppErrorModel(
@@ -159,7 +160,16 @@ class ApiHandler {
             AppErrorModel(message: LocaleKeys.common_errors_somethingWentWrong),
           );
         }
-        return Right(onSuccess.call(response.data ?? {}));
+
+        Map<String, dynamic> processedData;
+        if (response.data is Map<String, dynamic>) {
+          // If it's already a map, use it directly
+          processedData = response.data as Map<String, dynamic>;
+        } else {
+          // If it's a List or primitive, wrap it in a 'data' key
+          processedData = {'data': response.data};
+        }
+        return Right(onSuccess.call(processedData));
       } else {
         return Left(onError?.call(response.data ?? {}) ?? defaultErrorMessage);
       }

@@ -260,8 +260,10 @@ abstract class CrudBloc<T, ID> extends Bloc<CrudEvent<T>, CrudState<T>> {
             isLoading: false,
             successMessage: LocaleKeys
                 .core_abstract_presentation_bloc_crud_updateSuccessMessage,
+            selectedEntity: entity,
           ),
         );
+
         _updateEntitiesInState(emit, updatedList);
       },
     );

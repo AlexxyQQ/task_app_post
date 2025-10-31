@@ -2,6 +2,8 @@ import 'package:get_it/get_it.dart';
 
 import '../../config/observers/app_route.oserver.dart';
 import '../../config/observers/bloc_observer.dart';
+import '../../features/post/di/post.di.dart';
+import '../../features/user/di/user.di.dart';
 import '../common/data/data_source/local/app_setting.local.data_source.dart';
 import '../common/domain/services/api/dio.service.dart';
 import '../common/domain/services/navigation/navigation.service.dart';
@@ -43,5 +45,7 @@ class MainDI {
       );
 
     // ==== Features ====
+    PostDI.register();
+    UserDI.register();
   }
 }

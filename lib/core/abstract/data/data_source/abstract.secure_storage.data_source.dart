@@ -116,7 +116,11 @@ abstract class ISecureStorageDataSource<T> {
       final jsonString = await secureStorageService.read(key: modelKey);
       // ignore: prefer_const_constructors
       if (jsonString == null) {
-        return Right(<T>[defaultValue() as T]);
+        if (defaultValue() == null) {
+          return Right(<T>[]);
+        } else {
+          return Right(<T>[defaultValue() as T]);
+        }
       }
       return Right(listFromJson(jsonString));
     } catch (e) {
