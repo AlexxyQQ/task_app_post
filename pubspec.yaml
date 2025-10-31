@@ -1,0 +1,93 @@
+name: task_app
+description: "A new Flutter project."
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^9.1.1
+  overlay_support: ^2.1.0
+  flutter_screenutil: ^5.9.3
+  auto_route: ^10.2.0
+  dio: ^5.9.0
+  fpdart: ^1.2.0
+  easy_localization: ^3.0.8
+  freezed_annotation: ^3.1.0
+  flutter_secure_storage: ^9.2.4
+  get_it: ^8.2.0
+  rxdart: ^0.28.0
+  file_picker: ^10.3.3
+  image_picker: ^1.2.0
+  equatable: ^2.0.7
+  cached_network_image: ^3.4.1
+  flutter_typeahead: ^5.2.0
+  flutter_svg: ^2.2.1
+  flutter_dotenv: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  #============================================================
+  # Linting & Static Analysis
+  #============================================================
+  flutter_lints: ^6.0.0 # Flutter recommended lints
+  analyzer: ^8.1.1 # Dart static analyzer
+
+  #============================================================
+  # Code Generation & Build Tools
+  #============================================================
+  build_runner: ^2.10.1 # Code generation runner
+  freezed: ^3.2.3 # Code generation for Freezed models
+  json_serializable: ^6.11.1 # JSON (de)serialization
+  flutter_gen_runner: ^5.12.0 # Flutter asset/code generation
+  auto_route_generator: ^10.2.5 # Code generator for AutoRoute
+
+#============================================================
+# FlutterGen Configuration
+#============================================================
+flutter_gen:
+  output: lib/config/constants/gen
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - env/
+    - assets/
+    - assets/translations/
+    - assets/images/
+    - assets/icons/
+
+scripts:
+  #============================================================
+  # 🧹 Maintenance & Code Quality
+  #============================================================
+  get: flutter pub get
+  clean: flutter clean && flutter pub get && dart fix --apply && dart format . &&flutter analyze && dart analyze && dart run custom_lint:main
+  fix: dart fix --apply
+  format: dart format .
+  imports: dart run import_sorter:main
+  analyze: flutter analyze && dart analyze && dart run custom_lint:main
+
+  #============================================================
+  # 🧪 Testing
+  #============================================================
+  test: flutter test
+  coverage: flutter test --coverage
+
+  #============================================================
+  # 🧬 Code Generation
+  #============================================================
+  build: dart run build_runner build --delete-conflicting-outputs
+  watch: dart run build_runner watch --delete-conflicting-outputs
+  gen: dart run easy_localization:generate -S assets/translations -f keys -O lib/config/constants/gen -o locale_keys.g.dart
+  icons: dart run splash_master create && dart run icons_launcher:create

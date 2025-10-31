@@ -1,0 +1,218 @@
+{
+  "app_name": "My Laundry",
+  "languages": {
+    "english": "English",
+    "nepali": "Nepali",
+    "spanish": "Spanish"
+  },
+  "common": {
+    "errors": {
+      "somethingWentWrong": "Something went wrong",
+      "noInternetConnection": "No internet connection",
+      "serverError": "Server error"
+    },
+    "words": {
+      "cancel": "Cancel",
+      "tryAgain": "Try Again",
+      "delete": "Delete",
+      "continue": "Continue",
+      "maybeLater": "May be later",
+      "noItemsFound": "No Items Found",
+      "noSlugFound": "No {slug} Found",
+      "google": "Google"
+    }
+  },
+  "core": {
+    "abstract": {
+      "data": {
+        "sources": {
+          "secure_storage": {
+            "itemAlreadyExists": "Item already exists",
+            "indexOutOfBounds": "Index {index} is out of bounds for list of length {length}",
+            "keysNotSupported": "Getting all keys is not supported by FlutterSecureStorage. Consider implementing a key tracking mechanism if needed.",
+            "seedPathNotSet": "Seed asset path is not set",
+            "createFailed": "Failed to create item with key \"{modelKey}\": {error}",
+            "createMultipleFailed": "Failed to create multiple items with key \"{modelKey}\": {error}",
+            "readFailed": "Failed to read items with key \"{modelKey}\": {error}",
+            "updateFailed": "Failed to update items with key \"{modelKey}\": {error}",
+            "updateByIndexFailed": "Failed to update item at index {index} with key \"{modelKey}\": {error}",
+            "updateWhereFailed": "Failed to update item with condition for key \"{modelKey}\": {error}",
+            "updateAllWhereFailed": "Failed to update items with condition for key \"{modelKey}\": {error}",
+            "upsertFailed": "Failed to upsert item for key \"{modelKey}\": {error}",
+            "deleteFailed": "Failed to delete items with key \"{modelKey}\": {error}",
+            "deleteByIndexFailed": "Failed to delete item at index {index} with key \"{modelKey}\": {error}",
+            "deleteWhereFailed": "Failed to delete items with condition for key \"{modelKey}\": {error}",
+            "clearFailed": "Failed to clear storage: {error}",
+            "containsKeyFailed": "Failed to check if key \"{modelKey}\" exists: {error}",
+            "countFailed": "Failed to count items with key \"{modelKey}\": {error}",
+            "isEmptyFailed": "Failed to check if list is empty for key \"{modelKey}\": {error}",
+            "whereFailed": "Failed to filter items with key \"{modelKey}\": {error}",
+            "firstWhereFailed": "Failed to find first item with key \"{modelKey}\": {error}",
+            "readMultipleFailed": "Failed to read multiple keys: {error}",
+            "writeMultipleFailed": "Failed to write multiple items: {error}",
+            "seedFailed": "Failed to seed data: {error}"
+          }
+        }
+      },
+      "presentation": {
+        "bloc": {
+          "crud": {
+            "createdSuccessMessage": "Entity created successfully",
+            "updateSuccessMessage": "Entity updated successfully",
+            "deleteSuccessMessage": "Entity deleted successfully"
+          }
+        }
+      }
+    },
+    "common": {
+      "domain": {
+        "services": {
+          "encryption": {
+            "invalidTextFormat": "Invalid encrypted text format.",
+            "decryptionFailed": "Decryption failed. Please check your password or data integrity."
+          }
+        }
+      },
+      "features": {
+        "permission": {
+          "presentation": {
+            "helper": {
+              "permissionRequirementDialog": {
+                "openSettings": "Open Settings",
+                "goToSettings": "Go to Settings"
+              }
+            },
+            "view": {
+              "pages": {
+                "notificationPermissionPage": {
+                  "title": "Notification Permission",
+                  "subtitle": "Notification Permission description explaining why it is needed",
+                  "helperTitle": "Notification Permission",
+                  "helperSubtitle": "Notification Permission description explaining why it is needed"
+                },
+                "cameraPermissionPage": {
+                  "title": "Camera Permission",
+                  "subtitle": "Camera Permission description explaining why it is needed",
+                  "helperTitle": "Camera Permission",
+                  "helperSubtitle": "Camera Permission description explaining why it is needed"
+                },
+                "locationPermissionPage": {
+                  "title": "Location Permission",
+                  "subtitle": "Location Permission description explaining why it is needed",
+                  "helperTitle": "Location Permission",
+                  "helperSubtitle": "Location Permission description explaining why it is needed"
+                },
+                "microphonePermissionPage": {
+                  "title": "Microphone Permission",
+                  "subtitle": "Microphone Permission description explaining why it is needed",
+                  "helperTitle": "Microphone Permission",
+                  "helperSubtitle": "Microphone Permission description explaining why it is needed"
+                },
+                "storagePermissionPage": {
+                  "title": "Storage Permission",
+                  "subtitle": "Storage Permission description explaining why it is needed",
+                  "helperTitle": "Storage Permission",
+                  "helperSubtitle": "Storage Permission description explaining why it is needed"
+                }
+              }
+            }
+          }
+        }
+      },
+      "presentation": {
+        "views": {
+          "pages": {
+            "elaboratedSelectPage": {
+              "title": "Select an Item"
+            }
+          },
+          "widgets": {
+            "deleteItemBottomSheetWidget": {
+              "subTitle": "This action cannot be undone. The item will be permanently removed."
+            }
+          }
+        }
+      }
+    }
+  },
+  "feature": {
+    "splash": {
+      "bloc": {
+        "checkingUserLocalData": "Checking User local data...",
+        "welcomeToMyLaundry": "Welcome to My Laundry",
+        "foundUserLocalData": "Found local user data..",
+        "fetchingDataFromDatabase": "Fetching user form the database...",
+        "foundYou": "Found you..",
+        "checkingYourProfile": "Checking your profile..",
+        "couldNotFindLocalUser": "Couldn't find local user data..",
+        "pleaseLogin": "Please LogIn",
+        "userNotFound": "User was not found",
+        "couldNotFindYou": "Couldn't find you sorry..",
+        "couldNotFindYourProfileDetails": "Couldn't find your profile details",
+        "pleaseCompleteYourProfile": "Please Complete your profile.",
+        "pleaseSelectCurrency": "Please select your primary currency."
+      }
+    },
+    "onboarding": {
+      "pages": {
+        "onboardingPage": {
+          "pageOneTitle": "Smarter Budgeting Starts Here",
+          "pageOneDescription": "My Laundry helps you stay in control of your finances. Track your income, set limits, and understand where your money goes — all in one beautiful, easy-to-use app.",
+          "pageTwoTitle": "No More Manual Entries",
+          "pageTwoDescription": "Tired of logging every expense? My Laundry scans your SMS and notifications securely to detect and predict transactions automatically — so you don't miss a single one.",
+          "pageThreeTitle": "Budgeting, Your Way",
+          "pageThreeDescription": "Choose what works best for you — envelope-based budgeting for strict control, or category-based tracking for a flexible overview. My Laundry adapts to your style.",
+          "pageFourTitle": "Let’s Get Started",
+          "pageFourDescription": "Securely sign in with your Google account to begin managing your money better with My Laundry."
+        }
+      },
+      "widgets": {
+        "onboardingCarouselWidget": {
+          "continueWithGoogle": "Continue With Google"
+        }
+      }
+    },
+    "user": {
+      "dataSource": {
+        "googleSignInFailed": "Failed to sign in with Google: {error}",
+        "noIdToken": "No ID Token found.",
+        "signOutFailed": "Failed to sign out: {error}",
+        "fetchFailed": "Failed to get user: {error}",
+        "updateFailed": "Failed to update user: {error}",
+        "userNotFound": "User not found",
+        "deleteFailed": "Failed to delete user: {error}",
+        "deleteUnauthorized": "User not found or unauthorized",
+        "importAuthError": "Authentication Error: User is not logged in.",
+        "importFailed": "Data import failed. Check logs at {filePath}",
+        "exportFailed": "Data export failed: {error}",
+        "importStarting": "Starting data import...",
+        "userAuthenticated": "User authenticated...",
+        "dataDecrypted": "Data decrypted and parsed...",
+        "preparingData": "Preparing data for database...",
+        "importingProfile": "Importing profile...",
+        "importingCoreData": "Importing core data...",
+        "importingAccounts": "Importing accounts...",
+        "importingTransactions": "Importing transactions...",
+        "exportStarting": "Starting backup...",
+        "fetchingData": "Fetching data from database...",
+        "dataFetched": "Data fetched successfully...",
+        "savingData": "Saving data..."
+      },
+      "blocs": {
+        "importExport": {
+          "backupFailed": "Backup Failed",
+          "importSuccess": "Data imported successfully!",
+          "importFailed": "Import Failed",
+          "exportSuccess": "Data exported successfully",
+          "locationChangeSuccess": "Backup location changed successfully.",
+          "importStartedInBackground": "Import process started in the background.",
+          "importStartFailed": "Failed to start the import process: {error}"
+        },
+        "login": {
+          "loginSuccess": "Logged in successfully",
+          "logoutSuccess": "Logged out successfully"
+        }
+      }
+    }
+  }
+}
